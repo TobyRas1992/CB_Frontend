@@ -18,13 +18,30 @@ let userListing = (function () {
     elementToRemove.parentElement.removeChild(elementToRemove);
   };
 
+  let addUserToArray = (user) => {
+    if (typeof user === "object" && "name" in user) {
+      userList.push(user);
+    } else {
+      console.log("User is not correcrt");
+    }
+  };
+  // gets users from API
   let loadList = () => {
     showLoadingMessage();
     fetch(apiURL)
       .then((response) => response.json())
       .then((json) => {
         hideLoadingMessage();
+        json.forEach((item) => {
+          let user = {
+            name: item.name,
+            companyName: item.company.name,
+          };
+          addUserToArray(user);
+          console.log(user);
+        });
         console.log(json);
+        console.log(userList);
       })
       .catch((e) => {
         hideLoadingMessage();
