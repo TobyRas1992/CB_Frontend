@@ -7,13 +7,25 @@ let userListing = (function () {
   let userList = [];
   let apiURL = "https://jsonplaceholder.typicode.com/users";
 
+  let hideContent = () => {
+    let heading = document.querySelector(".page-heading");
+    heading.classList.add("visually-hidden");
+  };
+
+  let showContent = () => {
+    let heading = document.querySelector(".page-heading");
+    heading.classList.remove("visually-hidden");
+  };
+
   let showLoadingMessage = () => {
+    hideContent();
     let loadingMessage = document.createElement("P");
     loadingMessage.innerText = "Loading. One moment!";
     document.body.appendChild(loadingMessage);
   };
 
   let hideLoadingMessage = () => {
+    showContent();
     let elementToRemove = document.querySelector("P");
     elementToRemove.parentElement.removeChild(elementToRemove);
   };
@@ -53,9 +65,12 @@ let userListing = (function () {
       });
   };
 
+  //code for each user
   let addListItem = (user) => {
     //finish code here
+    let;
   };
+
   return {
     addUserToArray: addUserToArray,
     loadList: loadList,
