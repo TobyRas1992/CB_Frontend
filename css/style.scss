@@ -11,3 +11,13 @@ body {
 .userCompany {
   color: grey;
 }
+
+//not working correctly - should be in custom file
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1225px,
+  xxl: 1400px,
+);
