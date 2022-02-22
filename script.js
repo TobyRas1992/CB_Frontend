@@ -35,7 +35,7 @@ let userListing = (function () {
   };
 
   let addUserToArray = (user) => {
-    if (typeof user === "object" && "name" in user) {
+    if (typeof user === "object" && "name" in user && "companyName" in user) {
       userList.push(user);
     } else {
       console.log("User is not correcrt");
@@ -54,10 +54,8 @@ let userListing = (function () {
             companyName: item.company.name,
           };
           addUserToArray(user);
-          console.log(user);
         });
-        console.log(json);
-        console.log(userList);
+        userList.forEach((user) => addListItem(user));
       })
       .catch((e) => {
         hideLoadingMessage();
@@ -67,8 +65,13 @@ let userListing = (function () {
 
   //code for each user
   let addListItem = (user) => {
-    //finish code here
-    let;
+    let userContainer = document.querySelector("#userList-container");
+    let userListItem = document.createElement("div");
+    userListItem.classList.add("col-3");
+    let name = user.name;
+    let companyName = user.companyName;
+    userListItem.innerText = name;
+    userContainer.appendChild(userListItem);
   };
 
   return {
@@ -78,9 +81,12 @@ let userListing = (function () {
     addListItem: addListItem,
   };
 })();
-
+/* 
 userListing.loadList().then(() => {
   userListing.getAll().forEach((user) => {
     userListing.addListItem(user);
   });
 });
+ */
+
+userListing.loadList();
