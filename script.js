@@ -68,7 +68,8 @@ let userListing = (function () {
   let addListItem = (user) => {
     let userContainer = document.querySelector("#userList-container");
     let userListItem = document.createElement("div");
-    userListItem.classList.add("col-3");
+    userListItem.classList.add("col-xl-6");
+    userListItem.classList.add("col-xxl-3");
     userListItem.classList.add("user-display");
 
     let name = user.name;
