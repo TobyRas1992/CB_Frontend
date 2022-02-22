@@ -1,8 +1,13 @@
-.visible {
-  visibility: hidden;
+.userLogo {
+  border-radius: 50%;
+  height: 2rem;
 }
 
-.invisible {
-  visibility: hidden;
+.userName {
+  text-decoration: underline;
+}
+
+.userCompany {
+  color: grey;
 }
 /*# sourceMappingURL=style.css.map */

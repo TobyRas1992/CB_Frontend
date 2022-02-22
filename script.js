@@ -73,12 +73,14 @@ let userListing = (function () {
 
     let name = user.name;
     let companyName = user.companyName;
-    //  userListItem.innerText = name;
+
     //set inner html
     userListItem.innerHTML = `
-    <img src="${imageURL}"></img>
-    <p>${name}</p>
-    <p>${companyName}</p>
+    <div class="d-flex">
+    <img class="userLogo" src="assets/1F83B3.png"></img>
+    <p class="userName mx-2">${name}</p>
+    <p class="userCompany">(${companyName})</p>
+    </div>
     `;
 
     userContainer.appendChild(userListItem);
