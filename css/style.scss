@@ -1,18 +1,27 @@
-body {
+.row > * {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .userLogo {
   border-radius: 50%;
   height: 2rem;
+  margin-right: 20px;
 }
 .userName {
   text-decoration: underline;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .userCompany {
-  color: grey;
+  color: #999999;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.no-email {
+  color: #222222;
 }
 
 //not working correctly - should be in custom file

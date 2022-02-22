@@ -49,10 +49,12 @@ let userListing = (function () {
       .then((response) => response.json())
       .then((json) => {
         hideLoadingMessage();
+        console.log(json);
         json.forEach((item) => {
           let user = {
             name: item.name,
             companyName: item.company.name,
+            email: item.email,
           };
           addUserToArray(user);
         });
@@ -79,11 +81,17 @@ let userListing = (function () {
     userListItem.innerHTML = `
     <div class="d-flex">
     <img class="userLogo" src="assets/1F83B3.png"></img>
-    <p class="userName mx-2">${name}</p>
+    <p class="userName">${name}</p>
     <p class="userCompany">(${companyName})</p>
     </div>
     `;
 
+    //if no email on user object then change text color
+    if (user.email === null) {
+      console.log(`${name} is missing an email`);
+      let userNameField = document.querySelector(".userName");
+      userNameField.classList.add("no-email");
+    }
     userContainer.appendChild(userListItem);
   };
 
