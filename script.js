@@ -23,7 +23,12 @@ let userListing = (function () {
     fetch(apiURL)
       .then((response) => response.json())
       .then((json) => {
+        hideLoadingMessage();
         console.log(json);
+      })
+      .catch((e) => {
+        hideLoadingMessage();
+        console.error(e);
       });
   };
   return {
