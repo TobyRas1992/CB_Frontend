@@ -1,8 +1,3 @@
-/* let getUsers = () => {
-  fetch(apiURL)
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-}; */
 /* 
 fetch(apiURL)
   .then((response) => response.json())
@@ -25,6 +20,11 @@ let userListing = (function () {
 
   let loadList = () => {
     showLoadingMessage();
+    fetch(apiURL)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
   };
   return {
     loadList: loadList,
