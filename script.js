@@ -6,6 +6,7 @@ fetch(apiURL)
 let userListing = (function () {
   let userList = [];
   let apiURL = "https://jsonplaceholder.typicode.com/users";
+  let imageURL = "https://via.placeholder.com/150/1F83B3";
 
   let hideContent = () => {
     let heading = document.querySelector(".page-heading");
@@ -68,9 +69,18 @@ let userListing = (function () {
     let userContainer = document.querySelector("#userList-container");
     let userListItem = document.createElement("div");
     userListItem.classList.add("col-3");
+    userListItem.classList.add("user-display");
+
     let name = user.name;
     let companyName = user.companyName;
-    userListItem.innerText = name;
+    //  userListItem.innerText = name;
+    //set inner html
+    userListItem.innerHTML = `
+    <img src="${imageURL}"></img>
+    <p>${name}</p>
+    <p>${companyName}</p>
+    `;
+
     userContainer.appendChild(userListItem);
   };
 
@@ -81,12 +91,5 @@ let userListing = (function () {
     addListItem: addListItem,
   };
 })();
-/* 
-userListing.loadList().then(() => {
-  userListing.getAll().forEach((user) => {
-    userListing.addListItem(user);
-  });
-});
- */
 
 userListing.loadList();
