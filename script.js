@@ -1,8 +1,3 @@
-/* 
-fetch(apiURL)
-  .then((response) => response.json())
-  .then((json) => console.log(json));
- */
 let userListing = (function () {
   let userList = [];
   let apiURL = "https://jsonplaceholder.typicode.com/users";
