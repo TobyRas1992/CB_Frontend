@@ -18,6 +18,10 @@ let userListing = (function () {
     elementToRemove.parentElement.removeChild(elementToRemove);
   };
 
+  let getAll = () => {
+    return userList;
+  };
+
   let addUserToArray = (user) => {
     if (typeof user === "object" && "name" in user) {
       userList.push(user);
@@ -48,9 +52,20 @@ let userListing = (function () {
         console.error(e);
       });
   };
+
+  let addListItem = (user) => {
+    //finish code here
+  };
   return {
+    addUserToArray: addUserToArray,
     loadList: loadList,
+    getAll: getAll,
+    addListItem: addListItem,
   };
 })();
 
-userListing.loadList();
+userListing.loadList().then(() => {
+  userListing.getAll().forEach((user) => {
+    userListing.addListItem(user);
+  });
+});
