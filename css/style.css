@@ -1,6 +1,11 @@
+h2 {
+  font-weight: 600;
+}
+
 .row > * {
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 2em;
 }
 
 .userLogo {
@@ -11,8 +16,8 @@
 
 .userName {
   text-decoration: underline;
-  overflow: hidden;
   white-space: nowrap;
+  margin-right: 3px;
 }
 
 .userCompany {
@@ -20,6 +25,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-right: 20px;
 }
 
 .no-email {

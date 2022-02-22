@@ -36,7 +36,7 @@ let userListing = (function () {
   };
 
   let addUserToArray = (user) => {
-    if (typeof user === "object" && "name" in user && "companyName" in user) {
+    if (typeof user === "object" && "name" in user) {
       userList.push(user);
     } else {
       console.log("User is not correcrt");
@@ -86,7 +86,7 @@ let userListing = (function () {
     </div>
     `;
 
-    //if no email on user object then change text color
+    //if no email on user object then apply class to change text color
     if (user.email === null) {
       console.log(`${name} is missing an email`);
       let userNameField = document.querySelector(".userName");
